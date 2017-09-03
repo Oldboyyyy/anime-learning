@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>animte</title>
+    <style>
+      #animte{
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+      }
+    </style>
+</head>
+
+<body>
+    <div id="animte"> </div>
+    <button id="btn1">123</button>
+    <button id="btn2">456</button>
+    <script src="./anime-build.js"></script>
+    <script>
+        var cssSelector = anime({
+            targets: '#animte',
+            translateX: 250,
+            direction: 'reverse',
+            // direction: 'alternate',
+            duration: 3000,
+            loop: true
+        });
+        console.log(cssSelector)
+        document.getElementById('btn1').addEventListener('click', function(){
+            cssSelector.pause()
+        }, false)
+        document.getElementById('btn2').addEventListener('click', function(){
+            cssSelector.play()
+        }, false)
+    </script>
+</body>
+
+</html>
